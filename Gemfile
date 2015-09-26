@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-
+gem "acts_as_follower"
 gem 'simple_form'
 gem "minitest-rails"
 gem 'bootstrap-sass', '~> 3.3.5'

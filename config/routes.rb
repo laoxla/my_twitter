@@ -1,4 +1,31 @@
 Rails.application.routes.draw do
+  root 'tweets#index'
+
+  get 'tweets/:id' => 'tweets#show', as: :tweet
+
+  get 'tweets/new' => 'tweets#create', as: :tweets
+
+  get 'tweets/new' => 'tweets#new',  as: :new_tweet
+
+  get 'tweets/edit' => 'tweets#edit', as: :edit_tweet
+
+  get 'tweets/delete' => 'tweets#delete'
+
+  get "/sign_in" => "sessions#new", as: :sign_in
+
+  post "/sign_in" => 'sessions#create'
+
+  post "/sign_out" => 'sessions#delete', as: :sign_out
+
+  get "/users/new" => 'users#new', as: :sign_up
+
+ post "/users" => 'users#create', as: :users
+
+ post "/users/:id/follow" => "following#create", as: :follow_user
+
+  post "/users/:id/stop-following" => "following#delete", as: :stop_following_user
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
