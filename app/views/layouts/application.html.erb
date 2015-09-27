@@ -8,6 +8,33 @@
 </head>
 <body>
 
+  <nav>
+   <ul>
+     <% if user_signed_in? %>
+       <li> Welcome <%= @current_user.full_name %></li>
+       <li> <%= link_to 'New Tweet', new_tweet_path %></li>
+       <li> <%= link_to 'Home', root_path %></li>
+       <li><%= link_to 'Sign Out', sign_out_path, method: :post %></li>
+     <% else %>
+
+     <% end %>
+   </ul>
+ </nav>
+
+ <div class="container">
+
+
+
+  <% if alert %>
+    <div class="alert alert-danger"><%= alert %></div>
+  <% end %>
+
+  <% if notice %>
+    <div class="alert alert-info"><%= notice %></div>
+  <% end %>
+
+
+
 <%= yield %>
 
 </body>

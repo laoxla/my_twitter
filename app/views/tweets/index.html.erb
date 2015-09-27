@@ -4,15 +4,22 @@
 <h1>Tweets</h1>
 
 <% @people.each do |user| %>
-<h2><%= user.full_name %></h2>
+
+   <%= image_tag(user.photo) %> <h2> <%= user.full_name %></h2>
 
 <% user.tweets.each do |tweet| %>
-
+<hr>
 <blockquote>
-  <%= link_to tweet.text, tweet_path(id: tweet.id) %> <cite><%= tweet.posted_at %></cite>
+  <%= link_to tweet.text, tweet_path(id: tweet.id) %> <cite><%= tweet.post_at %></cite>
+
+  <%= link_to like_tweet_path(id: tweet.id), method: :post, class: 'btn btn-default' do %>
+      <i class ="glyphicon glyphicon-thumbs-up"></i>
+      <%= pluralize tweet.view_count, 'like' %>
+      <% end %>
+  
 </blockquote>
 
-  <p><%= tweet.text %></p>
+<hr>
 <% end %>
 <% end %>
 
@@ -26,4 +33,5 @@
     <% end %>
   </li>
 <% end %>
+
 </div>

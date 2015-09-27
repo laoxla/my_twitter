@@ -22,7 +22,7 @@ class SessionsController < ApplicationController
 
    end
 
-   def destroy
+   def delete
      sign_out
      redirect_to root_path, notice: "You are now signed out. Thank you come again"
    end

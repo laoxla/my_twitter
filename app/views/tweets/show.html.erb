@@ -1,4 +1,14 @@
 <h1>Tweets#show</h1>
-<p>Find me in app/views/tweets/show.html.erb</p>
-<h1><%= @tweet.text %></h1>
-<p>Posted: <%= @tweet.posted_at %></p>
+
+<hr>
+<blockquote>
+  <%= @tweet.text %> <cite><%= @tweet.post_at %></cite>
+
+  <%= link_to like_tweet_path(id: @tweet.id), method: :post, class: 'btn btn-default' do %>
+      <i class ="glyphicon glyphicon-thumbs-up"></i>
+      <%= pluralize @tweet.view_count, 'like' %>
+      <% end %>
+
+</blockquote>
+
+<hr>

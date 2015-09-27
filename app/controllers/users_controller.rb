@@ -8,7 +8,7 @@ class UsersController < ApplicationController
      @user = User.new params.require(:user).permit(:email, :password, :password_confirmation)
      if @user.save
        sign_in @user
-       redirect_to root_path, notice: "Welcome to my_twitter, #{@user.email}"
+       redirect_to root_path, notice: "Welcome to my_twitter, #{@user.full_name}"
      else
        render :new
      end

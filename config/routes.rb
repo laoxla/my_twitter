@@ -1,15 +1,17 @@
 Rails.application.routes.draw do
   root 'tweets#index'
 
+  get 'tweets/new' => 'tweets#new',  as: :new_tweet
+
   get 'tweets/:id' => 'tweets#show', as: :tweet
 
-  get 'tweets/new' => 'tweets#create', as: :tweets
+  post 'tweets/new' => 'tweets#create', as: :tweets
 
-  get 'tweets/new' => 'tweets#new',  as: :new_tweet
+  post 'tweets/:id/like' => 'tweets#like', as: :like_tweet
 
   get 'tweets/edit' => 'tweets#edit', as: :edit_tweet
 
-  get 'tweets/delete' => 'tweets#delete'
+  delete 'tweets/delete' => 'tweets#delete', as: :delete_tweet
 
   get "/sign_in" => "sessions#new", as: :sign_in
 

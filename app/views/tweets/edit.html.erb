@@ -1,2 +1,6 @@
 <h1>Tweets#edit</h1>
 <p>Find me in app/views/tweets/edit.html.erb</p>
+<%= simple_form_for @tweet do |f| %>
+ <%= f.input :text %>
+
+ <%= f.button :submit %> or <%= link_to 'Delete', "delete_tweet_path", method: :delete, data: {confirm: "Are you sure?"} %>

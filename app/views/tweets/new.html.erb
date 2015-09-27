@@ -1,2 +1,11 @@
+
+<div class="container">
 <h1>Tweets#new</h1>
-<p>Find me in app/views/tweets/new.html.erb</p>
+
+
+
+ <%= simple_form_for @tweet do |f| %>
+ <%= f.input :text %>
+ <%= f.button :submit %>
+<% end %>
+</div>
