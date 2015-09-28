@@ -1,7 +1,10 @@
-<h1>Tweets#show</h1>
-
+<div class="container"
+<div class="show">
+<%= image_tag(@tweet.user.photo) %> <h3> <%= @tweet.user.full_name %></h3>
+</div>
 <hr>
 <blockquote>
+
   <%= @tweet.text %> <cite><%= @tweet.post_at %></cite>
 
   <%= link_to like_tweet_path(id: @tweet.id), method: :post, class: 'btn btn-default' do %>
@@ -9,6 +12,10 @@
       <%= pluralize @tweet.view_count, 'like' %>
       <% end %>
 
+
+      <%= link_to 'Edit', edit_tweet_path %> or <%= link_to 'Delete', delete_tweet_path, method: :get, data: {confirm: "Are you sure?"} %>
+
 </blockquote>
 
 <hr>
+</div>

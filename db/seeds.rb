@@ -1,6 +1,6 @@
 
 m = User.create first_name: "Marko", last_name: "Clement", email: "marko@example.com", password: "12345678", photo: "http://knowledgeoverflow.com/wp-content/uploads/2012/07/august311.gif"
-l = User.create first_name: "Linda", last_name: "Mars", email: "linda@example.com", password: "12345678", photo: "https://d13yacurqjgara.cloudfront.net/users/710/screenshots/217283/jumping-girl-cartoon-character-sketch-coghill.jpg"
+l = User.create first_name: "Linda", last_name: "Mars", email: "linda@example.com", password: "12345678", photo: "http://d236bkdxj385sg.cloudfront.net/wp-content/uploads/2013/08/penny-proud.jpg"
 j = User.create first_name: "Jason", last_name: "Borne", email: "jason@example.com", password: "12345678", photo: "http://www.mascotdesign.com/_dev/images/famous-cartoon-character-popeye.jpg"
 s = User.create first_name: "Smith", last_name: "Klein", email: "smith@example.com", password: "12345678", photo: "http://blog.coghillcartooning.com/wp-content/uploads/2010/08/cartoon-character-portrait-chris-e.jpg"
 

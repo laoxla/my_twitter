@@ -9,9 +9,11 @@ Rails.application.routes.draw do
 
   post 'tweets/:id/like' => 'tweets#like', as: :like_tweet
 
-  get 'tweets/edit' => 'tweets#edit', as: :edit_tweet
+  get 'tweets/:id/edit' => 'tweets#edit', as: :edit_tweet
 
-  delete 'tweets/delete' => 'tweets#delete', as: :delete_tweet
+  patch 'tweets/:id' => 'tweets#update'
+
+  get 'tweets/:id/delete' => 'tweets#delete', as: :delete_tweet
 
   get "/sign_in" => "sessions#new", as: :sign_in
 

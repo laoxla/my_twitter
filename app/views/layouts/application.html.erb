@@ -5,19 +5,20 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 </head>
 <body>
 
   <nav>
-   <ul>
-     <% if user_signed_in? %>
-       <li> Welcome <%= @current_user.full_name %></li>
-       <li> <%= link_to 'New Tweet', new_tweet_path %></li>
-       <li> <%= link_to 'Home', root_path %></li>
-       <li><%= link_to 'Sign Out', sign_out_path, method: :post %></li>
-     <% else %>
+    <ul class="nav nav-tabs nav-justified">
 
-     <% end %>
+     <% if user_signed_in? %>
+       <li> <%= link_to 'MyTwitter' %> </li>
+       <li> <%= link_to 'Home', root_path %></li>
+       <li> <%= link_to 'New Tweet', new_tweet_path %></li>
+       <li><%= link_to 'Sign Out', sign_out_path, method: :post %></li>
+       <% end %>
+
    </ul>
  </nav>
 

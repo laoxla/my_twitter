@@ -5,9 +5,13 @@ class TweetsController < ApplicationController
 
   def index
     @users = User.where("id != ?", @current_user.id)
-    @people = @current_user.following_users
+    group = @current_user.following_users
 
+   follower_ids = group.pluck(:id)
+   all_ids = follower_ids << @current_user.id
+    @people = Tweet.where(user_id: all_ids).order("post_at DESC")
   end
+
 
   def show
     @tweet = Tweet.find params[:id]
@@ -19,7 +23,7 @@ class TweetsController < ApplicationController
   end
 
   def create
-   @tweet = Tweet.new(article_params)
+   @tweet = Tweet.new tweet_params
    if @tweet.save
      redirect_to root_path
    else
@@ -28,8 +32,19 @@ class TweetsController < ApplicationController
  end
 
   def edit
-    @tweet = Tweet.find params[:id]
+       @tweet = Tweet.find params[:id]
+  
   end
+
+  def update
+   @tweet = Tweet.find params[:id]
+   if @tweet.update params.require(:tweet).permit(:text)
+     redirect_to root_path
+   else
+     render :edit
+   end
+ end
+
 
   def delete
     @tweet = Tweet.find params[:id]
@@ -37,10 +52,15 @@ class TweetsController < ApplicationController
     redirect_to root_path
   end
 
+
   def like
       @tweet = Tweet.find params[:id]
       @tweet.update view_count: (@tweet.view_count + 1)
       redirect_to root_path
     end
+
+    def tweet_params
+     params.require(:tweet).permit(:text, :user_id)
+   end
 
 end

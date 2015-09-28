@@ -1,27 +1,33 @@
 
 
+<div class="container">
 
-<h1>Tweets</h1>
 
-<% @people.each do |user| %>
+<h1>MyTwitter</h1>
+<div class="Welcome"> Welcome <%= @current_user.full_name %> </div>
 
-   <%= image_tag(user.photo) %> <h2> <%= user.full_name %></h2>
 
-<% user.tweets.each do |tweet| %>
+<% @people.each do |tweet| %>
+
+
+
+
 <hr>
 <blockquote>
+  <%= image_tag(tweet.user.photo) %> <h3> <%= tweet.user.full_name %></h3>
   <%= link_to tweet.text, tweet_path(id: tweet.id) %> <cite><%= tweet.post_at %></cite>
 
   <%= link_to like_tweet_path(id: tweet.id), method: :post, class: 'btn btn-default' do %>
-      <i class ="glyphicon glyphicon-thumbs-up"></i>
+      <i class="fa fa-star-o"></i>
       <%= pluralize tweet.view_count, 'like' %>
       <% end %>
-  
+
 </blockquote>
 
 <hr>
 <% end %>
-<% end %>
+</div>
+
 
 <div class="all_users">
 <% @users.each do |user| %>
