@@ -13,6 +13,6 @@ deploy:
   app: evening-plains-9773
   on:
     repo: laoxla/my_twitter
- run:
+  run:
     - "rake db:migrate"
     - "rake cleanup"
