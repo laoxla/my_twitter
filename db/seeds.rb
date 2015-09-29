@@ -8,7 +8,7 @@ m.tweets.create post_at: 3.days.ago, text: "Too much agreement kills a chat."
 m.tweets.create post_at: 1.days.ago, text: "A successfull man is one who makes more money than his wife can spent. A successfull woman is one who can find such man."
 m.tweets.create post_at: 4.days.ago, text: "I may be drunk, miss, but in the morning I will be sober and you will still be ugly. "
 m.tweets.create post_at: 6.days.ago, text: "A woman's mind is cleaner than a man's: she changes it more often."
-l.tweets.create post_at: 3.days.ago, text: "Before I refuse to take your questions, I have an opening statment. "
+l.tweets.create post_at: 3.days.ago, text: "Before I refuse to take your questions, I have an opening statement. "
 l.tweets.create post_at: 4.days.ago, text: "Graphical user interface success infographic buzz monetization virality partnership facebook venture iteration social proof. Virality deployment rockstar funding supply chain crowdfunding partnership user experience business-to-consumer iteration."
 l.tweets.create post_at: 5.days.ago, text: "Android return on investment crowdsource marketing metrics client network effects infographic supply chain burn rate pitch paradigm shift disruptive user experience. Creative startup iteration client crowdfunding. Crowdfunding scrum project prototype venture bandwidth. "
 l.tweets.create post_at: 21.days.ago, text: "First mover advantage A/B testing startup user experience virality venture network effects churn rate monetization gamification mass market holy grail handshake conversion"
@@ -21,12 +21,9 @@ s.tweets.create post_at: 1.days.ago, text: "Completely synergize resource taxing
 s.tweets.create post_at: 1.days.ago, text: "8-bit hoodie High Life Carles ethical, squid fanny pack cold-pressed 90's. Normcore ethical retro drinking vinegar authentic. Craft beer post-ironic whatever, try-hard flexitarian meditation leggings lomo tofu. PBR&B DIY Wes Anderson letterpress lo-fi. Heirloom kogi trust fund iPhone photo booth, four dollar toast cornhole distillery cold-pressed cliche mlkshk Austin keffiyeh migas. Health goth cliche cornhole blog wolf, pork belly kitsch cold-pressed meditation."
 s.tweets.create post_at: 2.days.ago, text: "Neutra meh slow-carb, gastropub Etsy direct trade typewriter gluten-free cardigan Pinterest trust fund hella. Chillwave Vice Truffaut banh mi squid small batch kogi selvage listicle. Shoreditch keytar mustache lumbersexual, plaid jean shorts VHS."
 
-
-
-
 m.follow(l)
-m.follow(s)
+m.follow(j)
 j.follow(m)
-l.follow(j)
-s.follow(l)
 j.follow(s)
+s.follow(l)
+l.follow(s)
