@@ -12,7 +12,7 @@ float:left;
  }
 
  body{
-
+ text-decoration: none;
  background: url(http://i.imgur.com/DyGRvq6.jpg);
 
  }
@@ -28,9 +28,33 @@ float:left;
   padding-bottom: 10px;
   margin: 0;
 }
-.libold{
+.libold a{
+  background: #2980b9;
   font-weight: bold;
+  color: #000;
+  text-decoration: none;
 }
 .container{
-  width: 650px;
+ text-decoration: none;
+  background-color: #fff;
+
+}
+
+.test{
+  float:right ;
+}
+
+.form2 {
+  padding: 30px;
+
+}
+.page-header{
+  background-color: #34495e;
+  margin-top: 0;
+}
+.page-header h1{
+  margin-top: 10px;
+}
+.list-group-item {
+  background-color: #34495e;
 }

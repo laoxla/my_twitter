@@ -21,7 +21,7 @@ class CanAccessHomeTest < Capybara::Rails::TestCase
 
   test "user can signin and follow user" do
 
-    m = User.create first_name: "Marko", last_name: "Clement", email: "marko@example.com", password: "12345678", photo: "http://knowledgeoverflow.com/wp-content/uploads/2012/07/august311.gif"
+    m = User.create! first_name: "Marko", last_name: "Clement", email: "marko@example.com", password: "12345678", photo: "http://knowledgeoverflow.com/wp-content/uploads/2012/07/august311.gif"
     l = User.create first_name: "Linda", last_name: "Mars", email: "linda@example.com", password: "12345678", photo: "http://d236bkdxj385sg.cloudfront.net/wp-content/uploads/2013/08/penny-proud.jpg"
     l.tweets.create post_at: 3.days.ago, text: "Before I refuse to take your questions, I have an opening statement. "
 

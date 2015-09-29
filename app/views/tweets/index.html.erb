@@ -1,21 +1,17 @@
 
 
-<div class="container">
+<div class="container col-md-6 col-md-offset-3">
 
 
 <h1>MyTwitter</h1>
 <div class="Welcome"> Welcome <%= @current_user.full_name %> </div>
-
-
 <% @people.each do |tweet| %>
-
-
-
-
 <hr>
-<blockquote>
+
+<blockquote class="tests">
   <%= image_tag(tweet.user.photo) %> <h3 class="fullname"> <%= tweet.user.full_name %></h3>
-  <%= link_to tweet.text, tweet_path(id: tweet.id) %> <cite><%= tweet.post_at %></cite>
+  <%=  link_to truncate(tweet.text,length: 140), tweet_path(id: tweet.id) %> <cite><%= tweet.post_at %></cite>
+
 
   <%= link_to like_tweet_path(id: tweet.id), method: :post, class: 'btn btn-default' do %>
       <i class="fa fa-star-o"></i>
@@ -23,20 +19,24 @@
       <% end %>
 
 </blockquote>
-
 <hr>
 <% end %>
 </div>
 
-<div class="col-xs-3 fixed-top">
-<% @users.each do |user| %>
-  <li>
-    <% if @current_user.following? user %>
+
+<div class="test col-xs-3 fixed-top">
+<div class="list-group">
+  <a href="#" class="list-group-item active">
+    frienemies
+  </a>
+  <% @users.each do |user| %>
+  <div class="list-group-item">
+     <% if @current_user.following? user %>
       <%= link_to "Stop Following #{user.full_name}", stop_following_user_path(id: user.id), method: :post %>
     <% else %>
       <%= link_to "Follow #{user.full_name}", follow_user_path(id: user.id), method: :post %>
     <% end %>
-  </li>
+</div>
 <% end %>
-
+</div>
 </div>

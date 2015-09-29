@@ -13,9 +13,9 @@
       <%= pluralize @tweet.view_count, 'like' %>
       <% end %>
 
-
+   <% if @current_user == @tweet.user %>
       <%= link_to 'Edit', edit_tweet_path %> or <%= link_to 'Delete', delete_tweet_path, method: :get, data: {confirm: "Are you sure?"} %>
-
+   <% end %>
 </blockquote>
 
 <hr>
