@@ -3,7 +3,7 @@
 <h1>Edit Tweet</h1>
 
 <%= simple_form_for @tweet do |f| %>
- <%= f.input :text %>
+ <%= f.input :text, as: :text %>
 
  <%= f.button :submit %>
 <% end %>
